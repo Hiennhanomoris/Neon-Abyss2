@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb4e048dbf3e6b4f80a04411e643b94, type: 3}
+  m_Name: Laser Gun 1
+  m_EditorClassIdentifier: 
+  name: laser gun
+  weaponPrefab: {fileID: 9016202497734065102, guid: a0a731671d46dc14ca92eb853ad2dacf, type: 3}
+  attackTime: 0.5
+  lineRenderer: {fileID: 0}
+  damage: 10
