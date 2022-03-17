@@ -113,6 +113,7 @@ public class PlayerStatus : MonoBehaviour
         else
         {
             playerStatus.currentHealth -= amount;
+            HeartPanelController.heartPanelController.ChangeHeart();
         }
     }
 }

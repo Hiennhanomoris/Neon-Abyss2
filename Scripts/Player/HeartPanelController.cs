@@ -5,34 +5,24 @@ using UnityEngine.UI;
 
 public class HeartPanelController : MonoBehaviour
 {
+    public static HeartPanelController heartPanelController;
     [SerializeField] private Image[] hearts;
     [SerializeField] private List<Image> listHeart;  
-
+    private void Awake() {
+        heartPanelController = this;
+    }
     private void Start() 
     {
         listHeart = new List<Image>();
         LoadHeart();    
     }     
 
-    private void Update() 
-    {
-        ChangeHeart();
-        DrawHeart();
-    }
-
-    private void DrawHeart()
-    {
-        foreach(Image i in listHeart)
-        {
-            i.transform.SetParent(transform);
-            i.transform.localScale = transform.localScale;
-        }
-    }
-
     private void AddHeart(Image image)
     {
         Image heart = Instantiate(image, transform.position, Quaternion.identity);
         listHeart.Add(heart);
+        heart.transform.SetParent(transform);
+        heart.transform.localScale = transform.localScale;
     }
 
     private void LoadHeart()
@@ -47,8 +37,9 @@ public class HeartPanelController : MonoBehaviour
         }
     }
 
-    private void ChangeHeart()
+    public void ChangeHeart()
     {
+        Debug.Log(PlayerStatus.Instance.getCurrentHealth());
         for(int i = 0; i < listHeart.Count; i++)
         {
             if(i < PlayerStatus.Instance.getCurrentHealth()/2)
@@ -61,7 +52,10 @@ public class HeartPanelController : MonoBehaviour
                 {
                     listHeart[i].sprite = hearts[1].sprite;
                 }
-                continue;
+                else 
+                {
+                    listHeart[i].sprite = hearts[2].sprite;
+                }
             }
             else
             {
