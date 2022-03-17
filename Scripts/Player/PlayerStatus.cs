@@ -11,16 +11,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
-
-    private void Awake() 
-    {
-        if(Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }    
-        Instance = this;
-    }
+    [SerializeField] private Sprite halfHeart;
 
     public int getCurrentHealth()
     {
@@ -87,14 +78,19 @@ public class PlayerStatus : MonoBehaviour
         playerStatus.damage = amount;
     }
 
-    public void TakeDamage(int amount)
+    private void Awake() 
     {
-        if(playerStatus.currentHealth <= amount)
-            Destroy(this.gameObject);
-        else
+        if(Instance != null && Instance != this)
         {
-            playerStatus.currentHealth -= amount;
-        }
+            Destroy(this);
+            return;
+        }    
+        Instance = this;
+    }
+
+    private void Start() 
+    {
+       //transform.SetParent  
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -107,11 +103,16 @@ public class PlayerStatus : MonoBehaviour
 
     private void Update() 
     {
-        for(int i = 0; i < hearts.Length; i++)
+        
+    }
+
+    public void TakeDamage(int amount)
+    {
+        if(playerStatus.currentHealth <= amount)
+            Destroy(this.gameObject);
+        else
         {
-            if(i < getCurrentHealth())
-                hearts[i].sprite = fullHeart;
-            else hearts[i].sprite = emptyHeart;
-        }    
+            playerStatus.currentHealth -= amount;
+        }
     }
 }

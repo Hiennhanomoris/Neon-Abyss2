@@ -15,6 +15,7 @@ public class PlayerShooting : MonoBehaviour
     {
         Instance = this;
         playerMovement = GetComponent<PlayerMovement>();
+        weapon = null;
     }
 
     private void Start() 
@@ -34,7 +35,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetButton("Fire1") && timeCount < 0)
+        if(Input.GetButtonDown("Fire1") && timeCount < 0 && weapon != null)
         {
             Shoot();
             timeCount = weapon.attackTime;

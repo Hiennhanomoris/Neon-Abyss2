@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool facingRight;
     public bool isOnGround;
     public bool isOnJumpingGround;
     [SerializeField] private Transform groundCheck;
@@ -19,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
-        facingRight = true;
-
         PlayerStatus.Instance.setCurrentHealth(PlayerStatus.Instance.getMaxHealth());
         PlayerStatus.Instance.setCurrentJump(PlayerStatus.Instance.getExtraJump());
     }

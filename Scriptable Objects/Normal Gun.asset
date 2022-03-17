@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27069e2f3f25cc45bcac704da32e443, type: 3}
   m_Name: Normal Gun
   m_EditorClassIdentifier: 
-  name: normal gun
+  weaponName: normal gun
   weaponPrefab: {fileID: 1910227255013815161, guid: f21f0014e42c2e04ab2f5c2ff278e21d, type: 3}
   attackTime: 0.2
   bullet: {fileID: 3422237147775604603, guid: 18f749054e4832d46bfec0161ee23b5b, type: 3}

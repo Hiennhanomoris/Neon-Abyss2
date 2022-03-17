@@ -5,7 +5,7 @@ using UnityEngine;
 public class NormalGunBullet : MonoBehaviour
 {
     private Rigidbody2D bulletRb;
-    public int damage;
+    [HideInInspector] public int damage;
 
     private void Awake() 
     {

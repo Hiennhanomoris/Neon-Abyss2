@@ -6,10 +6,10 @@ using UnityEngine;
 public class PlayerSO : ScriptableObject 
 {
     public int maxHealth;
-    public int currentHealth;
+    [HideInInspector] public int currentHealth;
     public int damage;
     public int extraJump;
-    public int currentJump;
+    [HideInInspector] public int currentJump;
 
     public int jumpForce;
     public int moveSpeed;

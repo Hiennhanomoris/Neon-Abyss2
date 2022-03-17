@@ -23,12 +23,12 @@ public class WeaponItem : MonoBehaviour
         float distance = Vector2.Distance(PlayerStatus.Instance.transform.position, this.transform.position);
         if(distance < 0.5f)
         {
-            Debug.Log("near");
+            //Debug.Log("near");
             return true;
         }
         else
         {
-            Debug.Log("not near");
+            //Debug.Log("not near");
         }
         return false;
     }

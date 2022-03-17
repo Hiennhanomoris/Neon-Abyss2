@@ -147,4 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e1317309d9a9442923598dc6e4f909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timesBouncing: 3
+  bouncing: 0
+  damage: 0
   bulletForce: 10
