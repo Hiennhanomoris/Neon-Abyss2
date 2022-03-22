@@ -6,6 +6,7 @@ public abstract class Weapon : ScriptableObject
     public string weaponName;
     public GameObject weaponPrefab;
     public float attackTime;
+    public int damage;
 
     public abstract void TriggerWeaponAbility();
 }

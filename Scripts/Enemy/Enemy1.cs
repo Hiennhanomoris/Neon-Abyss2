@@ -11,6 +11,20 @@ public class Enemy1 : EnemyAbstract
         Moving();
     }
 
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        var health = other.gameObject.GetComponent<IHealth>();
+        if(health != null)
+        {
+            health.TakeDamage(damage);
+        }
+    }
+
     private void Moving()
     {
         if(transform.position.x < xMin)
@@ -29,13 +43,13 @@ public class Enemy1 : EnemyAbstract
     private void FlipToLeft()
     {
         Vector3 temp = transform.localScale;
-        temp.x = -1f;
+        temp.x = -1.5f;
         transform.localScale = temp;
     }
     private void FlipToRight()
     {
         Vector3 temp = transform.localScale;
-        temp.x = 1f;
+        temp.x = 1.5f;
         transform.localScale = temp;
     }
 }

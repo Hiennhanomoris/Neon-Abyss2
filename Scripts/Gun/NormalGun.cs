@@ -8,7 +8,6 @@ public class NormalGun : Weapon
 {
     [SerializeField] private GameObject bullet;
     public float force;
-    public int damage;
 
     public override void TriggerWeaponAbility()
     {

@@ -6,7 +6,6 @@ using UnityEngine;
 public class LaserGun : Weapon
 {
     public LineRenderer lineRenderer;
-    public int damage;
     [SerializeField] private float laserLenght;
     
     public override void TriggerWeaponAbility()

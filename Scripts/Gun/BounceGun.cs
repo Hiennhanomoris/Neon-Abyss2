@@ -7,7 +7,6 @@ public class BounceGun : Weapon
 {
     [SerializeField] private GameObject bullet;
     public float force;
-    public int damage;
 
     public override void TriggerWeaponAbility()
     {
