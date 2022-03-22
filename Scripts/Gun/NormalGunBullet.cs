@@ -14,7 +14,11 @@ public class NormalGunBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.GetComponent<EnemyAbstract>() != null)
-            other.GetComponent<EnemyAbstract>().TakeDamage(damage);
+        var health = other.GetComponent<IHealth>();
+        if(health != null && !other.CompareTag("Player"))
+        {
+            health.TakeDamage(damage);
+            Destroy(this.gameObject);
+        }   
     }
 }

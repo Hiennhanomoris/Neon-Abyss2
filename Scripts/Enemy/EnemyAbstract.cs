@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyAbstract : MonoBehaviour
+public abstract class EnemyAbstract : MonoBehaviour, IHealth
 {
     public int maxHealth;
     public int currentHealth;
@@ -18,7 +18,7 @@ public abstract class EnemyAbstract : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public virtual void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         if(amount >= currentHealth)
             Destroy(this.gameObject);
@@ -28,15 +28,10 @@ public abstract class EnemyAbstract : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.CompareTag("Player"))
+        var health = other.GetComponent<IHealth>();
+        if(health != null)
         {
-            other.GetComponent<PlayerStatus>().TakeDamage(damage);   
-            //TakeDamage(other.GetComponent<PlayerStatus>().getDamage());
-        } 
-        else if(other.CompareTag("Player Bullet"))
-            {
-                TakeDamage(PlayerStatus.Instance.getDamage());
-                Destroy(other.gameObject);
-            }
+            health.TakeDamage(damage);
+        }
     }
 }

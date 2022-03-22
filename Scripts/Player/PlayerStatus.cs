@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : MonoBehaviour, IHealth
 {
     public static PlayerStatus Instance;
 
@@ -95,10 +95,11 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.CompareTag("Enemy"))
-            TakeDamage(other.gameObject.GetComponent<EnemyAbstract>().damage);  
-        if(other.CompareTag("Enemy2 Bullet"))
-            TakeDamage(1);  
+        var health = other.GetComponent<IHealth>();
+        if(health != null)
+        {
+            health.TakeDamage(getDamage());
+        }
     }
 
     private void Update() 

@@ -59,7 +59,7 @@ public class Enemy2 : EnemyAbstract
             {
                 Vector2 direct = PlayerStatus.Instance.transform.position - this.transform.position;
                 GameObject bullet = Instantiate(enemy2Bullet, spawnPoint.position, Quaternion.identity);
-
+                bullet.GetComponent<Enemy2Bullet>().damage = damage;
                 bullet.GetComponent<Rigidbody2D>().AddForce(direct.normalized * bulletSpeed, ForceMode2D.Impulse);
             }
             yield return new WaitForSeconds(2f);

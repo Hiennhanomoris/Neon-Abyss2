@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2373832927883768658}
   - component: {fileID: 8522200918225052665}
   - component: {fileID: 1112733959757214395}
-  - component: {fileID: 7381505649218657535}
   - component: {fileID: -9118786000525939188}
+  - component: {fileID: 4610244890621222379}
   m_Layer: 0
   m_Name: Bounce Bullet
   m_TagString: Player Bullet
@@ -123,18 +123,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7381505649218657535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3422237147775604603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1372f3f69f7264b9fb9ed267eb144b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-9118786000525939188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +138,16 @@ MonoBehaviour:
   timesBouncing: 2
   damage: 0
   bulletForce: 10
+--- !u!114 &4610244890621222379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3422237147775604603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4f71d243f472b4a9694872c8c726f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
