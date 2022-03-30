@@ -12,7 +12,7 @@ public class Box : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(!other.gameObject.CompareTag("Map") && !other.gameObject.CompareTag("Background"))
+        if(other.CompareTag("Player Bullet"))
         {
             Destroy(this.gameObject);
             Destroy(other.gameObject);

@@ -13,7 +13,7 @@ public class LaserGun : Weapon
         Transform firePoint = PlayerShooting.Instance.weaponSlot.GetChild(0).Find("FirePoint");
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direct = mousePos - (Vector2)firePoint.position;
-        RaycastHit2D[] raycastHitList2D = Physics2D.RaycastAll(firePoint.position, direct.normalized, direct.magnitude);
+        RaycastHit2D[] raycastHitList2D = Physics2D.RaycastAll(firePoint.position, direct.normalized, laserLenght);
 
         //Debug.DrawRay(firePoint.position, direct, Color.black, 0.5f);
         var lasers = Instantiate(laserPrefabs, firePoint.position, Quaternion.identity);

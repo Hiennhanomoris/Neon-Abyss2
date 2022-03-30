@@ -48,6 +48,16 @@ public class PlayerStatus : MonoBehaviour, IHealth
         playerStatus.jumpForce = amount;
     }
 
+    public int getCoin()
+    {
+        return playerStatus.coin;
+    }
+
+    public void setCoin(int amount)
+    {
+        playerStatus.coin = amount;
+    }
+
     public int getCurrentJump()
     {
         return playerStatus.currentJump;
@@ -86,6 +96,8 @@ public class PlayerStatus : MonoBehaviour, IHealth
             return;
         }    
         Instance = this;
+
+        playerStatus.coin = 0;
     }
 
     private void Start() 
@@ -102,11 +114,6 @@ public class PlayerStatus : MonoBehaviour, IHealth
         }
     }
 
-    private void Update() 
-    {
-        
-    }
-
     public void TakeDamage(int amount)
     {
         if(playerStatus.currentHealth <= amount)
@@ -116,5 +123,10 @@ public class PlayerStatus : MonoBehaviour, IHealth
             playerStatus.currentHealth -= amount;
             HeartPanelController.heartPanelController.ChangeHeart();
         }
+    }
+
+    public void IncreaseCoin(int amount)
+    {
+        playerStatus.coin += amount;
     }
 }

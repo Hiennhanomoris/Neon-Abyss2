@@ -13,4 +13,5 @@ public class PlayerSO : ScriptableObject
 
     public int jumpForce;
     public int moveSpeed;
+    public int coin;
 }
