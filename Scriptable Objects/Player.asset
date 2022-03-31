@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   maxHealth: 12
-  currentHealth: 11
+  currentHealth: 12
   damage: 6
   extraJump: 1
   currentJump: 1
   jumpForce: 10
   moveSpeed: 5
+  coin: 0

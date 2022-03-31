@@ -8,14 +8,22 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject hidenGround;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
+    [SerializeField] private GameObject door;
     private bool isHiden;
+    private void Awake() 
+    {
+        door.SetActive(false);    
+    }
 
     private void Start() 
     {
         Instantiate(enemy1, enemy1SpawnPoint.position, Quaternion.identity);   
         StartCoroutine(SpawnEnemy2()); 
         isHiden = false;
-        StartCoroutine(Hide());
+        if(hidenGround != null)
+        {
+            StartCoroutine(Hide());
+        }
     }
 
     private IEnumerator SpawnEnemy2()
@@ -43,5 +51,13 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
         }
+    }
+
+    private void Update() 
+    {
+        if(PlayerStatus.Instance.getCoin() > 10)
+        {
+            door.SetActive(true);
+        }    
     }
 }

@@ -33,6 +33,15 @@ public class BounceGunBullet : MonoBehaviour
 
                 bouncing++;
             }
-        }        
+        }   
+        else
+        {
+            var health = other.GetComponent<IHealth>();
+            if(health != null && !other.CompareTag("Player"))
+            {
+                health.TakeDamage(damage);
+                Destroy(this.gameObject);
+            }   
+        }     
     }
 }
