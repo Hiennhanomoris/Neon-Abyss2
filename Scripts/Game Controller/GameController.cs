@@ -8,11 +8,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject hidenGround;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
-    [SerializeField] private GameObject door;
     private bool isHiden;
     private void Awake() 
     {
-        door.SetActive(false);    
+
     }
 
     private void Start() 
@@ -51,13 +50,5 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
         }
-    }
-
-    private void Update() 
-    {
-        if(PlayerStatus.Instance.getCoin() > 10)
-        {
-            door.SetActive(true);
-        }    
     }
 }

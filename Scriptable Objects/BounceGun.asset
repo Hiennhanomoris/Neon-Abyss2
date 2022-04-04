@@ -15,6 +15,6 @@ MonoBehaviour:
   weaponName: bounce gun
   weaponPrefab: {fileID: 5023424874248700327, guid: 662e416730edf4148a96ddd16d55a84c, type: 3}
   attackTime: 0.3
+  damage: 15
   bullet: {fileID: 3422237147775604603, guid: 07c2dc57b4c009545ba80e46b3b60fef, type: 3}
   force: 10
-  damage: 2

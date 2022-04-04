@@ -15,6 +15,6 @@ MonoBehaviour:
   weaponName: normal gun
   weaponPrefab: {fileID: 1910227255013815161, guid: f21f0014e42c2e04ab2f5c2ff278e21d, type: 3}
   attackTime: 0.2
+  damage: 10
   bullet: {fileID: 3422237147775604603, guid: 18f749054e4832d46bfec0161ee23b5b, type: 3}
   force: 10
-  damage: 2
