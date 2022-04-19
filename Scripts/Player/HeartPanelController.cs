@@ -8,6 +8,7 @@ public class HeartPanelController : MonoBehaviour
     public static HeartPanelController heartPanelController;
     [SerializeField] private Image[] hearts;
     [SerializeField] private List<Image> listHeart;  
+    
     private void Awake() {
         heartPanelController = this;
     }
@@ -39,7 +40,7 @@ public class HeartPanelController : MonoBehaviour
 
     public void ChangeHeart()
     {
-        Debug.Log(PlayerStatus.Instance.getCurrentHealth());
+        //Debug.Log(PlayerStatus.Instance.getCurrentHealth());
         for(int i = 0; i < listHeart.Count; i++)
         {
             if(i < PlayerStatus.Instance.getCurrentHealth()/2)

@@ -8,10 +8,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject hidenGround;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
+    
     private bool isHiden;
     private void Awake() 
     {
-
+        
     }
 
     private void Start() 
@@ -36,7 +37,7 @@ public class GameController : MonoBehaviour
                 
                 yield return new WaitForSeconds(3f);
             }
-
+        
             yield return new WaitForSeconds(15f);
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour
+public class Box : MonoBehaviour, Enable2Explode
 {
     private Rigidbody2D boxRb;
     private void Awake() 
@@ -17,5 +17,10 @@ public class Box : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         }        
+    }
+
+    public void Explode()
+    {
+        Destroy(this.gameObject);
     }
 }
