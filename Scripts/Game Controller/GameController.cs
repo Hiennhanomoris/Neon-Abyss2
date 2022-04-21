@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private Transform enemy1SpawnPoint;
+    private Transform enemy1SpawnPoint;
     [SerializeField] private GameObject hidenGround;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
+    [SerializeField] private List<GameObject> listMap;
+    [SerializeField] private GameObject player;
+    private int currentLv;
+    private bool enableToNextLv;
     
     private bool isHiden;
     private void Awake() 
     {
-        
+        currentLv = 0;
+        ChangeMap(currentLv);
+        enableToNextLv = true;
+        Instantiate(player, Vector3.zero, Quaternion.identity);
     }
 
     private void Start() 
@@ -51,5 +58,30 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
         }
+    }
+
+    private void Update() 
+    {
+        if(PlayerStatus.Instance.getCoin() %10 == 0 && PlayerStatus.Instance.getCoin() != 0 && enableToNextLv)
+        {
+            enableToNextLv = false;
+            ChangeMap(currentLv);
+        }
+        if(PlayerStatus.Instance.getCoin()%5 == 0 && PlayerStatus.Instance.getCoin()%10 != 0)
+        {
+            enableToNextLv = true;
+        }
+    }
+
+    private void ChangeMap(int index)
+    {
+        var thisMap = GameObject.FindGameObjectWithTag("Map");
+        if(thisMap != null)
+        {
+            Destroy(thisMap);
+        }
+        var currentMap = Instantiate(listMap[index], Vector3.zero, Quaternion.identity);
+        enemy1SpawnPoint = currentMap.transform.GetChild(3).transform;
+        currentLv += 1;
     }
 }
