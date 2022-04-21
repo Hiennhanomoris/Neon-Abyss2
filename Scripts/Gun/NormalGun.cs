@@ -23,5 +23,5 @@ public class NormalGun : Weapon
     public int CalculateDamage()
     {
         return damage;
-    }
+    }    
 }

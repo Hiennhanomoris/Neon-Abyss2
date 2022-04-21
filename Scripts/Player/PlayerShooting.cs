@@ -43,8 +43,30 @@ public class PlayerShooting : MonoBehaviour
         timeCount -= Time.deltaTime;
     }
 
-    private void Shoot()
+    private void rotateWeapon()
     {
+        var direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - PlayerStatus.Instance.transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+        this.transform.GetChild(3).GetChild(0).transform.rotation = rotation;
+    }
+
+    private void Shoot()
+    {   
+        if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x < PlayerStatus.Instance.transform.position.x)
+        {
+            this.transform.GetChild(3).GetChild(0).transform.localScale = new Vector3(-1, -1, 0);
+        }
+        else 
+        {
+            this.transform.GetChild(3).GetChild(0).transform.localScale = new Vector3(1, 1, 0);
+        }
+
+        if(weapon != null)
+        {
+            rotateWeapon();
+        }
+
         if(transform.position.x < Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
         {
             playerMovement.Flip(1);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyAbstract : MonoBehaviour, IHealth
+public abstract class EnemyAbstract : MonoBehaviour, IHealth, Enable2Explode
 {
     [SerializeField] private GameObject coinPrefab;
     public int maxHealth;
@@ -41,5 +41,10 @@ public abstract class EnemyAbstract : MonoBehaviour, IHealth
         {
             health.TakeDamage(damage);
         }
+    }
+
+    public void Explode()
+    {
+        Destroy(this.gameObject);
     }
 }
