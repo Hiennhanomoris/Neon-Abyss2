@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject enemy2;
     [SerializeField] private List<GameObject> listMap;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject healthPanel;
     private int currentLv;
     private bool enableToNextLv;
     
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour
         ChangeMap(currentLv);
         enableToNextLv = true;
         Instantiate(player, Vector3.zero, Quaternion.identity);
+        DisplayHealthPanel();
     }
 
     private void Start() 
@@ -80,8 +82,22 @@ public class GameController : MonoBehaviour
         {
             Destroy(thisMap);
         }
+        ChecckMaxLv();
         var currentMap = Instantiate(listMap[index], Vector3.zero, Quaternion.identity);
         enemy1SpawnPoint = currentMap.transform.GetChild(3).transform;
         currentLv += 1;
+    }
+
+    private void DisplayHealthPanel()
+    {
+        healthPanel.SetActive(true);
+    }
+
+    private void ChecckMaxLv()
+    {
+        if(currentLv >= listMap.Count-1)
+        {
+            currentLv = -1;
+        }
     }
 }

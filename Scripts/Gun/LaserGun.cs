@@ -27,13 +27,8 @@ public class LaserGun : Weapon
         {
             if(hit.collider != null && hit.transform.GetComponent<EnemyAbstract>() != null)
             {
-                hit.transform.GetComponent<EnemyAbstract>().TakeDamage(damage);
+                hit.transform.GetComponent<EnemyAbstract>().TakeDamage(CalculateDamage());
             }
         }
-    }
-
-    public int CalculateDamage()
-    {
-        return damage;
     }
 }

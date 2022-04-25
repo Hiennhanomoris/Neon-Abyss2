@@ -117,7 +117,9 @@ public class PlayerStatus : MonoBehaviour, IHealth
     public void TakeDamage(int amount)
     {
         if(playerStatus.currentHealth <= amount)
+        {
             Destroy(this.gameObject);
+        }
         else
         {
             playerStatus.currentHealth -= amount;

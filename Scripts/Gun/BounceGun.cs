@@ -19,9 +19,4 @@ public class BounceGun : Weapon
         Vector2 direct = mousePos - (Vector2)firePoint.position;
         bullets.GetComponent<Rigidbody2D>().AddForce(direct.normalized * force, ForceMode2D.Impulse);
     }
-
-    public int CalculateDamage()
-    {
-        return damage;
-    }
 }
