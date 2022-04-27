@@ -24,6 +24,10 @@ public abstract class EnemyAbstract : MonoBehaviour, IHealth, Enable2Explode
         if(amount >= currentHealth)
         {
             Destroy(this.gameObject);
+
+            //sound
+            AudioManager.Instaince.Play("enemyDestroy");
+
             // for(int i = 0; i < reward; i++)
             // {
                 var coin = Instantiate(coinPrefab, this.transform.position, Quaternion.identity);

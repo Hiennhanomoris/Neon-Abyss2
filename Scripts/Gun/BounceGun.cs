@@ -13,6 +13,9 @@ public class BounceGun : Weapon
         Transform firePoint = PlayerShooting.Instance.weaponSlot.GetChild(0).Find("FirePoint");
         GameObject bullets = Instantiate(bullet, firePoint.position, Quaternion.identity);
 
+        //sound
+        AudioManager.Instaince.Play("bounceGun");
+
         bullets.GetComponent<BounceGunBullet>().damage = CalculateDamage();
         bullets.GetComponent<BounceGunBullet>().bulletForce = force;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

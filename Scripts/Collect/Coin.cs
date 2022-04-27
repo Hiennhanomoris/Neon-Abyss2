@@ -16,6 +16,10 @@ public class Coin : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Destroy(this.gameObject);
+
+            //sound
+            AudioManager.Instaince.Play("colectCoin");
+
             PlayerStatus.Instance.IncreaseCoin(reward);
         }    
     }

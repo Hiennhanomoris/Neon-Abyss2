@@ -14,6 +14,9 @@ public class NormalGun : Weapon
         Transform firePoint = PlayerShooting.Instance.weaponSlot.GetChild(0).Find("FirePoint");
         GameObject bullets = Instantiate(bullet, firePoint.position, Quaternion.identity);
 
+        //sound
+        AudioManager.Instaince.Play("normalGun");
+
         bullets.GetComponent<NormalGunBullet>().damage = CalculateDamage();
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direct = mousePos - (Vector2)firePoint.position;

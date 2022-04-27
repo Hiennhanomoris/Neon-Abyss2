@@ -15,6 +15,9 @@ public class LaserGun : Weapon
         Vector2 direct = mousePos - (Vector2)firePoint.position;
         RaycastHit2D[] raycastHitList2D = Physics2D.RaycastAll(firePoint.position, direct.normalized, laserLenght);
 
+        //sound
+        AudioManager.Instaince.Play("lazerGun");
+
         //Debug.DrawRay(firePoint.position, direct, Color.black, 0.5f);
         var lasers = Instantiate(laserPrefabs, firePoint.position, Quaternion.identity);
         var temp = lasers.GetComponent<Laser>();

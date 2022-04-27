@@ -123,6 +123,99 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &383722182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383722183}
+  - component: {fileID: 383722184}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: AudioManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383722183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383722182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383722184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383722182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf059fa6ebd707442871198de0f85b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - sorce: {fileID: 0}
+    name: normalGun
+    clip: {fileID: 8300000, guid: b9e4539178a3dc4428f3007049af0bad, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - sorce: {fileID: 0}
+    name: bounceGun
+    clip: {fileID: 8300000, guid: 0b3b51865e0a2ef42a7c31a719bf35a5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - sorce: {fileID: 0}
+    name: lazerGun
+    clip: {fileID: 8300000, guid: f14df0adc97a1d14a8df4d4fba64b687, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - sorce: {fileID: 0}
+    name: mainLoop
+    clip: {fileID: 8300000, guid: 8d4de88c68a49784ebc68d6fbd16327c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - sorce: {fileID: 0}
+    name: enemyDestroy
+    clip: {fileID: 8300000, guid: ce79b774b078f1b44aff49f5d99d6254, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - sorce: {fileID: 0}
+    name: upgrade
+    clip: {fileID: 8300000, guid: 92ac9086bbe84a041b2fcbf94c446994, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - sorce: {fileID: 0}
+    name: colectCoin
+    clip: {fileID: 8300000, guid: 8edc521666e7ace42a2e4cf1145a582b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - sorce: {fileID: 0}
+    name: hurt
+    clip: {fileID: 8300000, guid: 014127bbb0c03e94b97733780bde0539, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
 --- !u!1 &527686973
 GameObject:
   m_ObjectHideFlags: 0

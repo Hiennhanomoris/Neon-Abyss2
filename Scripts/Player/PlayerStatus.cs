@@ -116,6 +116,9 @@ public class PlayerStatus : MonoBehaviour, IHealth
 
     public void TakeDamage(int amount)
     {
+        //sound
+        AudioManager.Instaince.Play("hurt");
+
         if(playerStatus.currentHealth <= amount)
         {
             Destroy(this.gameObject);

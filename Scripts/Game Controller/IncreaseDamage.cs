@@ -13,6 +13,9 @@ public class IncreaseDamage : MonoBehaviour
             {
                 PlayerStatus.Instance.setDamage(PlayerStatus.Instance.getDamage() + 5);
                 Destroy(this.gameObject);
+
+                //sound
+                AudioManager.Instaince.Play("upgrade");
             }
         }    
     }
